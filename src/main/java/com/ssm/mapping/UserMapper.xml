@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.ssm.dao.UserMapper">
+
+    <select id="selectByPrimaryKey" resultType="com.ssm.entity.User">
+        select id, username,
+        password from user where id = #{id}
+    </select>
+
+    <insert id="insert" parameterType="com.ssm.entity.User"
+                useGeneratedKeys="true">
+        insert into user(username, password) values
+        (#{username}, #{password})
+    </insert>
+
+    <delete id="deleteByPrimaryKey">
+        delete from user where id = #{id}
+    </delete>
+
+</mapper>
